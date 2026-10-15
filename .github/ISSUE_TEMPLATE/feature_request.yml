@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest something Relesio does not do yet.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Tell us about the problem first; the best fix is not always the first one that comes to mind.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of Relesio?
+      options:
+        - Dashboard
+        - CLI
+        - CDN and URLs
+        - Environments and deploys
+        - Teams, roles and access
+        - Plans and pricing
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: What you are doing, and where Relesio gets in the way or falls short.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help?
+      description: How you picture it working.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: What do you do today instead?
+      description: Any workaround or other tool you use for this.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the open issues and did not find this request.
+          required: true

@@ -1,0 +1,69 @@
+name: Bug report
+description: Something in Relesio breaks or does not do what it says.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Issues here are public: never paste API tokens, passwords or private URLs.
+        Found a security problem? Please don't file it here. Use the Contact link at https://relesio.com instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where did it happen?
+      options:
+        - Dashboard (relesio.com)
+        - CLI (relesio)
+        - CDN (cdn.relesio.com)
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you saw, including any error message.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that shows the problem.
+      placeholder: |
+        1. Run `relesio upload`
+        2. Run `relesio deploy --env=staging`
+        3. Open the CDN URL
+    validations:
+      required: false
+  - type: input
+    id: cli-version
+    attributes:
+      label: CLI version
+      description: For CLI problems, the output of `relesio --version`.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output or logs
+      description: Paste the relevant output. Remove any tokens or private URLs first.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the open issues and did not find this one.
+          required: true
+        - label: I removed tokens, passwords and private URLs from this report.
+          required: true
